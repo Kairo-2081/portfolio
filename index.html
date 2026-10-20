@@ -152,6 +152,11 @@ h2 { font-family: var(--serif); font-variation-settings: "opsz" 144; font-weight
 .row .arr { font-family: var(--mono); font-size: 20px; text-align: right; padding-top: 6px; }
 .row .when { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-top: 6px; display: block; }
 
+/* teaching */
+.t-grid { display: grid; gap: 40px; align-items: start; }
+.statement { font-family: var(--serif); font-variation-settings: "opsz" 72; font-weight: 500; font-size: clamp(30px, 3.4vw, 56px); line-height: 1.12; letter-spacing: -.005em; max-width: 18ch; margin: 0 0 28px; text-wrap: balance; }
+.t-text { font-size: 18px; line-height: 1.65; max-width: 560px; margin: 0; }
+
 /* contact */
 .contact-grid { display: grid; gap: 40px; }
 .contact-grid > div:first-child p { font-size: 18px; line-height: 1.65; max-width: 520px; margin: 0 0 24px; }
@@ -169,6 +174,7 @@ footer .in { display: flex; justify-content: space-between; flex-wrap: wrap; gap
   .hero-low { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 60px; }
   .about-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 60px; }
   .contact-grid { grid-template-columns: minmax(0, 1fr) auto; gap: 60px; align-items: end; }
+  .t-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 60px; }
   .facts div { grid-template-columns: 183px minmax(0, 1fr); }
 }
 @media (max-width: 1100px) {
@@ -234,7 +240,8 @@ footer .in { display: flex; justify-content: space-between; flex-wrap: wrap; gap
       <li><a href="#about"><small>01</small>About</a></li>
       <li><a href="#skills"><small>02</small>Skills</a></li>
       <li><a href="#projects"><small>03</small>Work</a></li>
-      <li><a href="#contact"><small>04</small>Contact</a></li>
+      <li><a href="#teaching"><small>04</small>Teaching</a></li>
+      <li><a href="#contact"><small>05</small>Contact</a></li>
     </ul>
     <a class="cap dim" href="#about" style="text-decoration:none">Scroll ↓</a>
   </div>
@@ -367,9 +374,27 @@ footer .in { display: flex; justify-content: space-between; flex-wrap: wrap; gap
   </div>
 </section>
 
+<section id="teaching">
+  <div class="in">
+    <div class="head"><div class="l"><span class="n">( 04 )</span><h2>Teaching</h2></div></div>
+    <div class="t-grid">
+      <div>
+        <p class="statement">Clarity that lasts, not answers to memorize.</p>
+        <p class="t-text">I've mentored students for over three years, from juniors at Barishal Cadet College to engineering admission candidates aiming for the country's top universities. I break hard problems into conceptual steps, because strong fundamentals matter in the classroom as much as they do in code.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Years</dt><dd>3+ mentoring students</dd></div>
+        <div><dt>Subjects</dt><dd>Mathematics, Physics, Chemistry, General Science, Computer Science</dd></div>
+        <div><dt>Students</dt><dd>Individuals and batches, admission candidates, a first-year UCLA student</dd></div>
+        <div><dt>Platform</dt><dd>Achieve EdTech: masterclasses, YouTube lessons, question setting</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 <section id="contact" style="border-bottom:0">
   <div class="in">
-    <div class="head"><div class="l"><span class="n">( 04 )</span><h2>Contact</h2></div></div>
+    <div class="head"><div class="l"><span class="n">( 05 )</span><h2>Contact</h2></div></div>
     <div class="contact-grid">
       <div>
         <p>If you have a project that needs another builder, want to explore a technical collaboration, or just want to connect, my inbox is open.</p>
