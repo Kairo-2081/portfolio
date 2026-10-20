@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Raian Rashid Mayel, CSE student at BUET and full-stack developer.">
+<title>Raian Rashid Mayel</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: full-bleed black marquee, hero with a one-line display-serif name, sticky numbered nav, then label-left sections on grid-paper ground. Black and warm grey only. */
+:root {
+  --bg: #e3e1dd;
+  --ink: #1b1815;
+  --muted: #5f5a54;
+  --rule: #bfbbb4;
+  --bar: #1b1815;
+  --bar-ink: #e8e5df;
+  --grid: rgba(27, 24, 21, .05);
+  --gut: clamp(16px, 3.1vw, 60px);
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151311; --ink: #ebe8e2; --muted: #9a948b; --rule: #35312c; --bar: #ebe8e2; --bar-ink: #151311; --grid: rgba(255, 255, 255, .045);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151311; --ink: #ebe8e2; --muted: #9a948b; --rule: #35312c; --bar: #ebe8e2; --bar-ink: #151311; --grid: rgba(255, 255, 255, .045);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 30; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.in { padding-left: max(var(--gut), env(safe-area-inset-left, 0px)); padding-right: max(var(--gut), env(safe-area-inset-right, 0px)); }
+.mono { font-family: var(--mono); }
+.cap { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.dim { color: var(--muted); }
+.serif { font-family: var(--serif); font-variation-settings: "opsz" 144; }
+
+/* marquee */
+.marquee { background: var(--bar); color: var(--bar-ink); overflow: hidden; }
+.track { display: flex; width: max-content; animation: slide 60s linear infinite; }
+.track span { padding: 19px 36px 19px 0; white-space: nowrap; font-family: var(--mono); font-size: 13px; letter-spacing: .2em; text-transform: uppercase; }
+.track span::after { content: "/"; margin-left: 36px; opacity: .7; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* hero */
+.hero { padding-block: 48px 64px; }
+.hero-top { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
+.hero-top .right { text-align: right; line-height: 1.2; }
+h1 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144;
+  font-weight: 700;
+  font-size: min(7.6vw, 190px);
+  line-height: .95;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 56px 0 0;
+}
+.tagline {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 72;
+  font-weight: 500;
+  font-size: clamp(28px, 3vw, 58px);
+  line-height: 1.15;
+  max-width: 960px;
+  margin: 28px 0 0;
+  text-wrap: balance;
+}
+.hero-low { display: grid; gap: 40px; margin-top: 56px; align-items: end; }
+.intro { font-size: 18px; line-height: 1.65; max-width: 720px; margin: 0 0 20px; }
+.status { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; color: var(--muted); }
+.status i { width: 9px; height: 9px; background: var(--ink); display: inline-block; }
+.btns { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 30px; }
+.btn { display: inline-block; font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; background: var(--ink); color: var(--bg); padding: 18px 25px; text-decoration: none; border: 0; cursor: pointer; }
+.btn:hover { opacity: .85; }
+.ulink { font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 2px; background: none; border-top: 0; border-left: 0; border-right: 0; cursor: pointer; }
+.ulink:hover { color: var(--ink); }
+.facts { margin: 0; border-top: 1px solid var(--rule); }
+.facts div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.facts dt { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0; font-family: var(--mono); font-size: 15px; }
+
+/* nav */
+nav.sec { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+nav.sec .in { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding-block: 16px; }
+nav.sec ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 44px; }
+nav.sec a { text-decoration: none; font-family: var(--mono); font-size: 15px; }
+nav.sec a small { color: var(--muted); font-size: 11px; margin-right: 10px; }
+nav.sec a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* sections */
+section { border-bottom: 1px solid var(--rule); scroll-margin-top: calc(64px + env(safe-area-inset-top, 0px)); }
+section > .in { padding-block: clamp(56px, 6vw, 96px); }
+.head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 48px; }
+.head .l { display: flex; align-items: baseline; gap: 22px; }
+.head .n { font-family: var(--mono); font-size: 13px; letter-spacing: .1em; color: var(--muted); }
+h2 { font-family: var(--serif); font-variation-settings: "opsz" 144; font-weight: 600; font-size: clamp(48px, 5.2vw, 100px); line-height: 1; letter-spacing: -.01em; margin: 0; }
+.about-grid { display: grid; gap: 48px; }
+.about-grid p { margin: 0 0 20px; font-size: 18px; line-height: 1.65; max-width: 700px; }
+.about-grid p.dim { font-size: 18px; }
+.bracket { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 24px; }
+.xp { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.xp li { padding: 24px 0; border-bottom: 1px solid var(--rule); }
+.xp .top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 20px; }
+.xp h3 { font-family: var(--serif); font-variation-settings: "opsz" 48; font-weight: 500; font-size: 26px; line-height: 1.2; margin: 0; }
+.xp .role { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin: 10px 0 12px; }
+.xp p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; max-width: 62ch; }
+.recog { margin-top: 72px; }
+.recog ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px 40px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.recog li { border-top: 1px solid var(--ink); padding-top: 18px; }
+.recog .d { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.recog h4 { font-size: 17px; font-weight: 500; line-height: 1.35; margin: 10px 0 6px; }
+.recog p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+
+/* skills */
+.sk { display: grid; gap: 0 60px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.sk > div { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 12px 20px; padding: 24px 0; border-top: 1px solid var(--rule); }
+.sk h3 { margin: 0; font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 400; padding-top: 4px; }
+.sk p { margin: 0; font-size: 17px; line-height: 1.9; display: flex; flex-wrap: wrap; gap: 0 22px; }
+.domains { margin: 40px 0 0; padding-top: 24px; border-top: 1px solid var(--rule); }
+
+/* work */
+.rows { border-top: 1px solid var(--rule); }
+.row { display: grid; grid-template-columns: 150px minmax(0, 1.3fr) minmax(0, 1fr) 48px; gap: 12px 24px; padding: 32px 15px; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); align-items: start; }
+.row:hover, .row:focus-visible { background: var(--ink); color: var(--bg); }
+.row:hover .dim, .row:focus-visible .dim { color: inherit; opacity: .72; }
+.row .num { font-family: var(--mono); font-size: 13px; padding-top: 14px; }
+.row h3 { font-family: var(--serif); font-variation-settings: "opsz" 72; font-weight: 500; font-size: clamp(30px, 2.7vw, 44px); line-height: 1.1; margin: 0 0 8px; letter-spacing: -.005em; }
+.row .sub { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.row p { margin: 0 0 14px; font-size: 16px; line-height: 1.55; }
+.row .tags { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.row .arr { font-family: var(--mono); font-size: 20px; text-align: right; padding-top: 6px; }
+.row .when { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-top: 6px; display: block; }
+
+/* contact */
+.contact-grid { display: grid; gap: 40px; }
+.contact-grid > div:first-child p { font-size: 18px; line-height: 1.65; max-width: 520px; margin: 0 0 24px; }
+.email { font-family: var(--serif); font-variation-settings: "opsz" 144; font-weight: 500; font-size: clamp(30px, 4.4vw, 84px); line-height: 1.1; letter-spacing: -.01em; overflow-wrap: anywhere; display: inline-block; text-decoration: none; border-bottom: 2px solid var(--ink); padding-bottom: 4px; }
+.copyline { margin-top: 22px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.say { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: var(--muted); min-height: 1.3em; }
+.links { display: grid; grid-template-columns: repeat(2, auto); gap: 28px 80px; justify-content: start; align-content: start; }
+.links a { font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; }
+.links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+footer .in { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px; padding-block: 28px 96px; color: var(--muted); }
+.top-btn { position: fixed; left: env(safe-area-inset-left, 0px); bottom: env(safe-area-inset-bottom, 0px); width: 54px; height: 54px; border: 1px solid var(--ink); background: var(--bg); color: var(--ink); font-family: var(--mono); font-size: 18px; cursor: pointer; z-index: 25; }
+.top-btn:hover { background: var(--ink); color: var(--bg); }
+
+@media (min-width: 900px) {
+  .hero-low { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 60px; }
+  .about-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 60px; }
+  .contact-grid { grid-template-columns: minmax(0, 1fr) auto; gap: 60px; align-items: end; }
+  .facts div { grid-template-columns: 183px minmax(0, 1fr); }
+}
+@media (max-width: 1100px) {
+  .recog ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sk { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 899px) {
+  .row { grid-template-columns: 44px minmax(0, 1fr) 32px; }
+  .row .desc { grid-column: 2 / 4; grid-row: 2; }
+  .row .arr { grid-column: 3; grid-row: 1; }
+  .sk > div { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  h1 { white-space: normal; font-size: 21vw; line-height: .9; margin-top: 40px; }
+  h1 span { display: block; }
+  .hero-top .right { text-align: left; }
+  .recog ul { grid-template-columns: minmax(0, 1fr); }
+  .links { gap: 20px 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Open to technical collaborations</span><span>CSE @ BUET, 2025–2029</span><span>Full-stack · TypeScript · C++ · PostgreSQL</span><span>Building ShopNiro</span><span>18th nationally, CSE admission</span><span>Grand Finalist, BUET CSE Hackathon</span>
+    <span>Open to technical collaborations</span><span>CSE @ BUET, 2025–2029</span><span>Full-stack · TypeScript · C++ · PostgreSQL</span><span>Building ShopNiro</span><span>18th nationally, CSE admission</span><span>Grand Finalist, BUET CSE Hackathon</span>
+  </div>
+</div>
+
+<header class="hero in">
+  <div class="hero-top cap">
+    <span>Full-stack developer · CSE @ BUET</span>
+    <span class="right dim">Dhaka, Bangladesh<br><span id="clock">--:--</span> local</span>
+  </div>
+  <h1 aria-label="Raian Rashid Mayel"><span>Raian</span> <span>Rashid</span> <span>Mayel</span></h1>
+  <p class="tagline">I build full-stack systems from the ground up.</p>
+  <div class="hero-low">
+    <div>
+      <p class="intro">I'm a second-year CSE student at BUET. I've built marketplaces with local payments and AI assistants, a JavaFX library system, and a C++ game on OpenGL. I learn by building things from scratch, and I teach math, physics and computer science on the side.</p>
+      <div class="status cap"><i></i><span>Open to technical collaborations</span></div>
+      <div class="btns">
+        <a class="btn" href="https://github.com/RM-81">GitHub ↗</a>
+        <a class="ulink" href="#contact">Email me</a>
+      </div>
+    </div>
+    <dl class="facts">
+      <div><dt>Now</dt><dd>Building ShopNiro, a multi-vendor marketplace</dd></div>
+      <div><dt>Studying</dt><dd>BSc CSE, BUET (2nd year)</dd></div>
+      <div><dt>Focus</dt><dd>Full-stack web · C++ · DSA</dd></div>
+      <div><dt>Also</dt><dd>Teaches math, physics and CS</dd></div>
+    </dl>
+  </div>
+</header>
+
+<nav class="sec" aria-label="Sections">
+  <div class="in">
+    <ul>
+      <li><a href="#about"><small>01</small>About</a></li>
+      <li><a href="#skills"><small>02</small>Skills</a></li>
+      <li><a href="#projects"><small>03</small>Work</a></li>
+      <li><a href="#contact"><small>04</small>Contact</a></li>
+    </ul>
+    <a class="cap dim" href="#about" style="text-decoration:none">Scroll ↓</a>
+  </div>
+</nav>
+
+<section id="about">
+  <div class="in">
+    <div class="head"><div class="l"><span class="n">( 01 )</span><h2>About</h2></div></div>
+    <div class="about-grid">
+      <div>
+        <p>I'm a Computer Science and Engineering student at BUET, ranked 18th nationally in the CSE admission examination. Right now I'm building ShopNiro, an open-source multi-vendor marketplace with local payments and an AI shopping assistant.</p>
+        <p>I tend to learn things by building them. A library system in JavaFX. A retro game in C++ on OpenGL. Marketplaces from scratch, and a campus platform I forked and heavily optimized with Team Redemption. Each one sharpened my curiosity for how systems come together.</p>
+        <p class="dim">I also compete in case-solving events and hackathons, and I teach math, physics and computer science to students at every level.</p>
+        <div class="btns">
+          <a class="btn" href="https://github.com/RM-81">GitHub ↗</a>
+          <a class="ulink" href="#contact">Email me</a>
+        </div>
+      </div>
+      <div>
+        <p class="bracket">[ Experience ]</p>
+        <ul class="xp">
+          <li>
+            <div class="top"><h3>Achieve EdTech</h3><span class="cap dim">Aug 2026 — Present</span></div>
+            <div class="role">Online Instructor &amp; Question Setter</div>
+            <p>Records online problem-solving masterclasses that break engineering admission problems into conceptual steps, and sets Mathematics and Physics questions for the preparation batch.</p>
+          </li>
+          <li>
+            <div class="top"><h3>Independent</h3><span class="cap dim">2025 — Present</span></div>
+            <div class="role">Private Tutor &amp; Admission Mentor</div>
+            <p>Tutors individuals and batches in Mathematics, Physics, Chemistry and Science up to SSC level, and coaches admission candidates on preparation strategy.</p>
+          </li>
+          <li>
+            <div class="top"><h3>Independent</h3><span class="cap dim">2025 — 2026</span></div>
+            <div class="role">Computer Science Instructor</div>
+            <p>Independently taught a first-year Computer Science course to a student enrolled at UCLA.</p>
+          </li>
+          <li>
+            <div class="top"><h3>Bangladesh University of Engineering and Technology</h3><span class="cap dim">2025 — 2029</span></div>
+            <div class="role">B.Sc. in Computer Science and Engineering</div>
+            <p>Grade 3.73. Previously at Barishal Cadet College, where I finished HSC with GPA 5.00 and 1st place in the Barishal Board.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recog">
+      <p class="bracket">[ Recognition ]</p>
+      <ul>
+        <li><div class="d">BUET</div><h4>Grand Finalist — CSE Hackathon</h4><p>Top 8 of 20 teams, with a cross-university student networking platform.</p></li>
+        <li><div class="d">BUET</div><h4>Grand Finalist — ME Mechathon</h4><p>Top 8 of 25 teams, tackling NASA's space debris removal problem.</p></li>
+        <li><div class="d">2024</div><h4>4th Place — Bangladesh Physics Olympiad</h4><p>Divisional round.</p></li>
+        <li><div class="d">2022</div><h4>Finalist — International Youth Math Challenge</h4><p>Also 1st Runner-Up, Divisional Biology Olympiad.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="in">
+    <div class="head"><div class="l"><span class="n">( 02 )</span><h2>Skills</h2></div></div>
+    <div class="sk">
+      <div><h3>Languages</h3><p><span>C</span><span>C++</span><span>Java</span><span>TypeScript</span></p></div>
+      <div><h3>Web</h3><p><span>Full-stack development</span><span>Vite</span><span>Bun</span><span>Node.js</span><span>JWT sessions</span></p></div>
+      <div><h3>Data</h3><p><span>PostgreSQL</span><span>Relational schema design</span><span>Data caching</span></p></div>
+      <div><h3>Desktop &amp; graphics</h3><p><span>JavaFX</span><span>iGraphics</span><span>OpenGL</span><span>Gradle</span></p></div>
+      <div><h3>Integrations</h3><p><span>bKash</span><span>SSLCOMMERZ</span><span>Gemini API</span><span>Resend API</span><span>Capacitor</span><span>Electron</span></p></div>
+      <div><h3>Foundations</h3><p><span>Data structures &amp; algorithms</span><span>Problem solving</span><span>Case solving</span></p></div>
+    </div>
+    <p class="domains cap dim">Domains — Full-stack web · E-commerce · Desktop apps · Game development · Data structures &amp; algorithms</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="in">
+    <div class="head"><div class="l"><span class="n">( 03 )</span><h2>Work</h2></div><span class="cap dim">Selected · 2025 — 2026</span></div>
+    <div class="rows">
+      <a class="row" href="https://github.com/RM-81">
+        <span class="num dim">01</span>
+        <div><h3>ShopNiro</h3><span class="sub dim">Multi-vendor marketplace</span><span class="when dim">Jun 2026 — Present</span></div>
+        <div class="desc"><p class="dim">An open-source marketplace where customers browse and track orders, admin-approved sellers manage stores, and a Gemini assistant helps shoppers find products. Pays through bKash and SSLCOMMERZ, uses httpOnly JWT sessions, and ships to Android, iOS and desktop via Capacitor and Electron.</p><div class="tags dim"><span>Bun</span><span>Vite</span><span>TypeScript</span><span>PostgreSQL</span></div></div>
+        <span class="arr">↗</span>
+      </a>
+      <a class="row" href="https://github.com/RM-81">
+        <span class="num dim">02</span>
+        <div><h3>GoCart</h3><span class="sub dim">Multi-vendor e-commerce</span><span class="when dim">2026</span></div>
+        <div class="desc"><p class="dim">A full-stack marketplace built for speed and type safety, with separate portals for customers, merchants and admins.</p><div class="tags dim"><span>TypeScript</span><span>Vite</span><span>Bun / Node.js</span></div></div>
+        <span class="arr">↗</span>
+      </a>
+      <a class="row" href="https://github.com/RM-81">
+        <span class="num dim">03</span>
+        <div><h3>CSB 2.0 · Campus Hub</h3><span class="sub dim">Campus community platform</span><span class="when dim">2025</span></div>
+        <div class="desc"><p class="dim">Unifies students, faculty and administrators. Built with Team Redemption by forking and heavily optimizing an existing codebase: end-to-end type safety, data caching and an embedded AI assistant.</p><div class="tags dim"><span>Full-stack</span><span>Type safety</span><span>AI assistant</span></div></div>
+        <span class="arr">↗</span>
+      </a>
+      <a class="row" href="https://github.com/RM-81">
+        <span class="num dim">04</span>
+        <div><h3>BookVerse</h3><span class="sub dim">Library management</span><span class="when dim">2025</span></div>
+        <div class="desc"><p class="dim">Automates library inventory and member workflows. Flat-file storage means small and medium institutions don't need to install a database.</p><div class="tags dim"><span>JavaFX</span><span>Gradle</span></div></div>
+        <span class="arr">↗</span>
+      </a>
+      <a class="row" href="https://github.com/RM-81">
+        <span class="num dim">05</span>
+        <div><h3>Bounce Classic</h3><span class="sub dim">Retro game recreation</span><span class="when dim">2025</span></div>
+        <div class="desc"><p class="dim">A ground-up recreation of the retro mobile puzzle-platformer in C++ on a modernized iGraphics framework with OpenGL acceleration, plus developer tools and performance improvements.</p><div class="tags dim"><span>C++</span><span>iGraphics</span><span>OpenGL</span></div></div>
+        <span class="arr">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:0">
+  <div class="in">
+    <div class="head"><div class="l"><span class="n">( 04 )</span><h2>Contact</h2></div></div>
+    <div class="contact-grid">
+      <div>
+        <p>If you have a project that needs another builder, want to explore a technical collaboration, or just want to connect, my inbox is open.</p>
+        <a class="email" id="email" href="mailto:rayans2081@gmail.com">rayans2081@gmail.com</a>
+        <div class="copyline">
+          <button class="ulink" id="copy" type="button">Copy email</button>
+          <span class="say" id="say" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="links">
+        <a href="https://github.com/RM-81">GitHub</a>
+        <a href="https://www.linkedin.com/in/kairo2081/">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="in cap">
+    <span>© 2026 Raian Rashid Mayel</span>
+    <span>Dhaka, Bangladesh</span>
+    <span>Portfolio / V1</span>
+  </div>
+</footer>
+
+<button class="top-btn" id="topbtn" type="button" aria-label="Back to top">↑</button>
+
+<script>
+(function () {
+  var clock = document.getElementById("clock");
+  function tick() {
+    try {
+      clock.textContent = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Dhaka" }).format(new Date());
+    } catch (e) { clock.textContent = ""; }
+  }
+  tick();
+  setInterval(tick, 30000);
+
+  var say = document.getElementById("say");
+  var email = document.getElementById("email");
+  function msg(t) { say.textContent = t; setTimeout(function () { say.textContent = ""; }, 2500); }
+  function pick() {
+    try {
+      var r = document.createRange(); r.selectNodeContents(email);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    } catch (e) {}
+    msg("Press Ctrl/Cmd+C to copy");
+  }
+  document.getElementById("copy").addEventListener("click", function () {
+    var t = email.textContent.trim();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(function () { msg("Copied"); }, pick);
+    } else { pick(); }
+  });
+
+  document.getElementById("topbtn").addEventListener("click", function () {
+    window.scrollTo({ top: 0 });
+  });
+})();
+</script>
+</body>
+</html>
