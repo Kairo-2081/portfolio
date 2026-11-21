@@ -101,6 +101,22 @@ Captured at 390 x 844. The section navigation wraps and the project rows stack.
 | 04 | Teaching | Three-plus years of mentoring: mathematics, physics, chemistry, general science and computer science |
 | 05 | Contact | Email with a copy button, GitHub and LinkedIn |
 
+## How it works
+
+```mermaid
+flowchart LR
+    B[Browser opens index.html] --> F[Loads Google Fonts]
+    B --> T{System theme}
+    T -- dark --> D[Dark variables]
+    T -- light --> L[Light variables]
+    B --> J[Small inline script]
+    J --> C[Clock, Asia/Dhaka, every 30 s]
+    J --> M[Copy email button]
+    J --> U[Back to top button]
+```
+
+All styling is in one `<style>` block and driven by CSS variables (`--bg`, `--ink`, `--muted`, `--rule`), so the dark theme is a second set of values for the same names. There is no framework and no build.
+
 ## Run locally
 
 Open `index.html` in a browser.
