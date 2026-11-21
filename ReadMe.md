@@ -119,7 +119,7 @@ All styling is in one `<style>` block and driven by CSS variables (`--bg`, `--in
 
 ## Run locally
 
-Open `index.html` in a browser.
+Open `index.html` in a browser. The fonts load from Google Fonts, so offline the page falls back to system fonts and looks slightly different.
 
 ## Deploy on GitHub Pages
 
