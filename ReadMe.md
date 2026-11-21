@@ -35,6 +35,38 @@ selected work, teaching and contact, in light and dark.
 | **JavaScript** | A local-time clock for Dhaka, a copy-email button and a back-to-top button |
 | **Dependencies** | None to install; open the file |
 
+## Screens
+
+These are real captures of `index.html` rendered in Chromium at 1440 px wide, in dark and light, taken from the file in this repository. The capture machine could not reach Google Fonts, so headings appear in the serif fallback rather than Fraunces.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="./.github/assets/readme/portfolio-about.jpg" />
+<img src="./.github/assets/readme/portfolio-about-light.jpg" alt="About section with experience and education lists" width="100%" />
+</picture>
+<p><b>About.</b> Experience and education, laid out as a ruled list.</p>
+</td>
+<td width="50%" valign="top">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="./.github/assets/readme/portfolio-skills.jpg" />
+<img src="./.github/assets/readme/portfolio-skills-light.jpg" alt="Skills section grouped into languages, web, data, desktop and graphics, integrations and foundations" width="100%" />
+</picture>
+<p><b>Skills.</b> Six groups, from languages to integrations.</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="./.github/assets/readme/portfolio-work.jpg" />
+<img src="./.github/assets/readme/portfolio-work-light.jpg" alt="Work section listing five projects with descriptions and tags" width="100%" />
+</picture>
+<p><b>Work.</b> Five projects, each row linking to its repository.</p>
+</td>
+</tr>
+</table>
+
 ## Run locally
 
 Open `index.html` in a browser.
