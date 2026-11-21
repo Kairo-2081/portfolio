@@ -67,6 +67,29 @@ These are real captures of `index.html` rendered in Chromium at 1440 px wide, in
 </tr>
 </table>
 
+### On a phone
+
+Captured at 390 x 844. The section navigation wraps and the project rows stack.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="./.github/assets/readme/portfolio-mobile-hero.jpg" />
+<img src="./.github/assets/readme/portfolio-mobile-hero-light.jpg" alt="Mobile view of the hero" width="100%" />
+</picture>
+<p><b>Hero.</b></p>
+</td>
+<td width="50%" valign="top">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="./.github/assets/readme/portfolio-mobile-work.jpg" />
+<img src="./.github/assets/readme/portfolio-mobile-work-light.jpg" alt="Mobile view of the work list" width="100%" />
+</picture>
+<p><b>Work.</b></p>
+</td>
+</tr>
+</table>
+
 ## Run locally
 
 Open `index.html` in a browser.
