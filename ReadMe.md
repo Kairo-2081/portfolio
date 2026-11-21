@@ -23,6 +23,18 @@ selected work, teaching and contact, in light and dark.
 
 </div>
 
+## At a glance
+
+| | |
+| --- | --- |
+| **What it is** | A one-page personal portfolio, all in `index.html` |
+| **Sections** | About, Skills, Work, Teaching, Contact |
+| **Work shown** | ShopNiro, GoCart, CSB 2.0, BookVerse and Bounce Classic, each linking to its repository |
+| **Theme** | Follows the system light or dark setting through `prefers-color-scheme` |
+| **Fonts** | Fraunces, Inter and JetBrains Mono from Google Fonts, with system fallbacks |
+| **JavaScript** | A local-time clock for Dhaka, a copy-email button and a back-to-top button |
+| **Dependencies** | None to install; open the file |
+
 ## Run locally
 
 Open `index.html` in a browser.
