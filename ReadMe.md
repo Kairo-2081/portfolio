@@ -90,6 +90,17 @@ Captured at 390 x 844. The section navigation wraps and the project rows stack.
 </tr>
 </table>
 
+## Sections
+
+| # | Section | What is in it |
+| --- | --- | --- |
+| Hero | Name, tagline, introduction | Links to GitHub and to the email address, plus a facts list: now, studying, focus, also |
+| 01 | About | Experience and education |
+| 02 | Skills | Languages, web, data, desktop and graphics, integrations, foundations |
+| 03 | Work | Five selected projects with a short description, stack tags and a link each |
+| 04 | Teaching | Three-plus years of mentoring: mathematics, physics, chemistry, general science and computer science |
+| 05 | Contact | Email with a copy button, GitHub and LinkedIn |
+
 ## Run locally
 
 Open `index.html` in a browser.
