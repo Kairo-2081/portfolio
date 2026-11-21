@@ -135,3 +135,7 @@ Open `index.html` in a browser.
 ├── index.html    the whole site: markup, styles and script
 └── README.md
 ```
+
+## Status
+
+Live content as of the last commit. The projects listed under Work are kept in sync with the repositories they link to.
