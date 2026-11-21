@@ -126,7 +126,7 @@ Open `index.html` in a browser. The fonts load from Google Fonts, so offline the
 1. Push this folder to a repository named `portfolio` (or `RM-81.github.io` for the root URL).
 2. In the repository, go to Settings → Pages.
 3. Set the source to the `main` branch and the `/ (root)` folder, then save.
-4. The site goes live at `https://rm-81.github.io/portfolio/` within a minute or two.
+4. The site goes live at `https://<account>.github.io/portfolio/` within a minute or two (the root address if the repository is named `<account>.github.io`).
 
 ## Project layout
 
